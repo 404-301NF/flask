@@ -1,1 +1,12 @@
-<h1>Hello world</h1>
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block title %}myproject{% endblock %}
+
+{% block page_content %}
+<div class = 'page-header'>
+    <h1>Peter {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+</div>
+{{ wtf.quick_form(form) }}
+<p>现在的时间是：{{ moment(current_time).format('YYYY年MM月DD日，hh:mm:ss a')}}.</p>
+<p>已经过去： {{ moment(current_time).fromNow(refresh=True)}}.</p>
+{% endblock %}

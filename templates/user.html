@@ -1,2 +1,8 @@
-{% extend "bootstrap/base.html" %}
+{% extends "base.html" %} 
 {% block title %}myproject{% endblock %}
+
+{% block page_content %}
+<div class = "page_content">
+	<h1>Hello,{{name}}</h1>
+</div>
+{% endblock %}
